@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leadflow Admin - Leads Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#466969",
+                        "inverse-primary": "#a7c8ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eef1f9",
+                        "surface-dim": "#d7dae2",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#705000",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#a9cdcd",
+                        "primary-fixed": "#d5e3ff",
+                        "primary-container": "#4a6fa5",
+                        "on-primary-container": "#edf1ff",
+                        "on-tertiary-fixed": "#261900",
+                        "tertiary-fixed-dim": "#edc065",
+                        "on-background": "#181c22",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#c5eae9",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#e5e8f0",
+                        "outline-variant": "#c3c6d1",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "secondary": "#426464",
+                        "surface": "#f8f9ff",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-variant": "#dfe2eb",
+                        "tertiary-container": "#8c6814",
+                        "primary": "#30568b",
+                        "surface-container-highest": "#dfe2eb",
+                        "on-secondary-fixed": "#002020",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001c3b",
+                        "secondary-container": "#c2e7e6",
+                        "surface-container": "#ebeef6",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#395f94",
+                        "on-primary-fixed-variant": "#1e477b",
+                        "on-tertiary-container": "#fff0d9",
+                        "outline": "#737780",
+                        "on-surface-variant": "#43474f",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdea4",
+                        "inverse-surface": "#2d3137",
+                        "on-surface": "#181c22",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#2a4c4d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "title-lg": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "label-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-item {
+            font-variation-settings: 'FILL' 1;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dfe2eb;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- Shell Container -->
+<div class="flex h-screen w-full">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 bg-surface-container flex flex-col p-md space-y-base fixed left-0 top-0 border-r border-outline-variant/30">
+<!-- Brand Section -->
+<div class="px-sm py-md">
+<h1 class="font-title-lg text-title-lg font-bold text-primary">Leadflow Admin</h1>
+<p class="font-label-lg text-label-lg text-on-surface-variant opacity-70">Management Portal</p>
+</div>
+<!-- Profile Context -->
+<div class="flex items-center gap-sm px-sm py-sm mb-md bg-surface-container-low rounded-xl">
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a corporate administrator in a clean office setting. The lighting is soft and natural, emphasizing a trustworthy and efficient persona. The background features blurred modern office elements in a light-mode aesthetic with soft blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9uHRo5Oy3FJkMxn_BVM4pS5XQ6hA8HMrtEHtaLanCrZXwbcsgOb8EPV7dPXSnK8YNT8nCAKnW1b8JqRWaSlXsaLz3DfYuQeN-UBSpACV346mwpTc-tC363PlAx221atGl48qbZKi5ECSzPvG0GedCk2rSc7-ryS4-aKHNpcn-nua_to_TwIhi7dnMSqAA1B9i2DZ_lUFnBr8TZASle8WK1gZyfTrjEv_lbPfgDS7VUTbqwy76BbA0jgXqE3u4rkJ4AqC-L_Nr_A1N"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Admin User</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Super Admin</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-grow space-y-xs overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg cursor-pointer active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<!-- Schedules -->
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg cursor-pointer active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-lg text-label-lg">Schedules</span>
+</a>
+<!-- Cleaners -->
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg cursor-pointer active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="cleaning_services">cleaning_services</span>
+<span class="font-label-lg text-label-lg">Cleaners</span>
+</a>
+<!-- Customers (Active) -->
+<a class="flex items-center gap-sm px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined active-nav-item" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-lg text-label-lg">Customers</span>
+</a>
+<!-- Invoices -->
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg cursor-pointer active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-lg text-label-lg">Invoices</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg cursor-pointer active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+</nav>
+<!-- CTA -->
+<button class="w-full py-sm px-md bg-primary text-on-primary rounded-xl font-label-lg text-label-lg hover:opacity-90 active:scale-95 transition-all shadow-sm">
+                New Booking
+            </button>
+<!-- Footer Navigation -->
+<div class="pt-md border-t border-outline-variant/30 space-y-xs">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-lg text-label-lg">Help Center</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-error hover:bg-error-container/20 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-lg text-label-lg">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-grow flex flex-col h-screen overflow-hidden">
+<!-- Header Section -->
+<header class="h-16 px-xl flex items-center justify-between bg-surface-container-lowest border-b border-outline-variant/20 sticky top-0 z-10">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Service Leads</h2>
+<span class="px-sm py-1 bg-surface-variant text-on-surface-variant rounded-full font-label-md text-label-md">24 Pending</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative flex items-center h-10 px-md bg-surface-container-low border border-outline-variant rounded-full group focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary text-[20px]" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md placeholder-outline w-64" placeholder="Search customer or service..." type="text"/>
+</div>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+<span class="font-label-lg text-label-lg">Filter</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-grow p-xl overflow-y-auto space-y-gutter">
+<!-- Quick Insights (Asymmetric Row) -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Conversion Card -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden shadow-sm">
+<div class="z-10">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider mb-xs">Conversion Rate</p>
+<h3 class="font-display-lg text-display-lg text-primary">68%</h3>
+</div>
+<div class="mt-md z-10">
+<span class="text-secondary font-bold text-body-md">+12%</span>
+<span class="text-on-surface-variant text-body-md ml-xs">from last week</span>
+</div>
+<!-- Abstract background element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-secondary-container/30 rounded-full blur-3xl"></div>
+</div>
+<!-- Trending Service -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/30 flex items-center gap-xl relative overflow-hidden shadow-sm">
+<div class="flex-grow">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider mb-xs">Top Requested Service</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Deep Kitchen Sanitation</h3>
+<p class="text-on-surface-variant mt-xs">Growing interest in residential kitchen deep-cleaning packages across urban sectors.</p>
+</div>
+<div class="w-48 h-24 hidden lg:block rounded-lg overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a pristine, modern kitchen counter being professionally cleaned. The scene features soft blue morning light reflecting off polished chrome fixtures. The aesthetic is extremely clean and organized, using a palette of whites, soft greys, and muted blues to evoke professional hygiene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBedI2-Q3_7nt1G-VDB0YGO8vc13yjR5XN0oll7NeEro1Zfm2WxKj-uOeAx7N8UB1A89yIfCjfK3ltbKIxMZCg9szHZuhrLBjSxNw3TxtbeAdfsFq9bq9Leu8dJE-Y3cN270HOcqY4psxr6hQ1PSOXR-vEdoGWnVaAiLHRQ_8uSQ1ZYFLkf6snrWzwzElf8Vd1o4Gkj8C_TLX4YzrVw3JOesLmn27MTJg_NWFGPF5kVR42qthlUMav3lWPOILarqpVc41n2lIaqtwEZ"/>
+</div>
+</div>
+</div>
+<!-- Leads Table Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant/20 flex justify-between items-center bg-surface-variant/10">
+<h4 class="font-title-lg text-title-lg text-on-surface font-bold">Recent Requests</h4>
+<div class="flex gap-sm">
+<button class="px-sm py-1 border border-outline text-on-surface font-label-lg text-label-lg rounded-lg hover:bg-surface-variant transition-all">Export CSV</button>
+<button class="px-sm py-1 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:opacity-90">View All</button>
+</div>
+</div>
+<!-- Table Responsive Wrapper -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-lg py-md font-label-lg text-label-lg text-on-surface-variant uppercase">Customer</th>
+<th class="px-lg py-md font-label-lg text-label-lg text-on-surface-variant uppercase">Service Type</th>
+<th class="px-lg py-md font-label-lg text-label-lg text-on-surface-variant uppercase">Date</th>
+<th class="px-lg py-md font-label-lg text-label-lg text-on-surface-variant uppercase">Status</th>
+<th class="px-lg py-md font-label-lg text-label-lg text-on-surface-variant uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- Row 1: Pending -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold">JS</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-bold">Jane Sommers</p>
+<p class="text-on-surface-variant text-label-md">jane.s@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<p class="text-on-surface font-body-md">Residential Deep Clean</p>
+<p class="text-on-surface-variant text-label-md">3 Bedrooms, 2 Bathrooms</p>
+</td>
+<td class="px-lg py-md text-on-surface font-body-md">Oct 24, 2024</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center gap-xs px-sm py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-lg">
+<span class="w-2 h-2 bg-outline rounded-full"></span>
+                                            Pending
+                                        </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 2: Approved (Sage Green) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold">MR</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-bold">Marcus Reed</p>
+<p class="text-on-surface-variant text-label-md">m.reed@corp.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<p class="text-on-surface font-body-md">Office Maintenance</p>
+<p class="text-on-surface-variant text-label-md">Commercial Space (2500 sq ft)</p>
+</td>
+<td class="px-lg py-md text-on-surface font-body-md">Oct 23, 2024</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center gap-xs px-sm py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-lg">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                                            Approved
+                                        </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 3: Completed -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold">AL</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-bold">Anita Lopez</p>
+<p class="text-on-surface-variant text-label-md">anita.l@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<p class="text-on-surface font-body-md">Window Cleaning</p>
+<p class="text-on-surface-variant text-label-md">Exterior/Interior full service</p>
+</td>
+<td class="px-lg py-md text-on-surface font-body-md">Oct 22, 2024</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center gap-xs px-sm py-1 bg-tertiary-container/20 text-tertiary rounded-full text-label-lg">
+<span class="w-2 h-2 bg-tertiary rounded-full"></span>
+                                            Completed
+                                        </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 4: Pending -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-outline-variant text-on-surface flex items-center justify-center font-bold">BK</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-bold">Brian Kim</p>
+<p class="text-on-surface-variant text-label-md">brian.k@startup.io</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<p class="text-on-surface font-body-md">Post-Construction Clean</p>
+<p class="text-on-surface-variant text-label-md">New Build (Penthouse)</p>
+</td>
+<td class="px-lg py-md text-on-surface font-body-md">Oct 22, 2024</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center gap-xs px-sm py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-lg">
+<span class="w-2 h-2 bg-outline rounded-full"></span>
+                                            Pending
+                                        </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-lg py-md border-t border-outline-variant/20 flex items-center justify-between">
+<p class="text-label-lg font-label-lg text-on-surface-variant">Showing 1-10 of 142 leads</p>
+<div class="flex items-center gap-base">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-lg text-label-lg">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container font-label-lg text-label-lg text-on-surface">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container font-label-lg text-label-lg text-on-surface">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Activity Feed Bento Section -->
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-6 bg-surface-container-low p-lg rounded-xl border border-outline-variant/20">
+<h4 class="font-title-lg text-title-lg text-on-surface font-bold mb-md">System Notifications</h4>
+<div class="space-y-md">
+<div class="flex gap-md p-md bg-surface-container-lowest rounded-lg border border-outline-variant/10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<div>
+<p class="text-on-surface font-bold font-body-md">New high-priority lead</p>
+<p class="text-on-surface-variant text-label-md">Post-Construction Clean requested by Brian Kim.</p>
+</div>
+</div>
+<div class="flex gap-md p-md bg-surface-container-lowest rounded-lg border border-outline-variant/10 shadow-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<div>
+<p class="text-on-surface font-bold font-body-md">Invoice #9024 Paid</p>
+<p class="text-on-surface-variant text-label-md">Marcus Reed completed payment for Office Maintenance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 bg-primary-container p-lg rounded-xl text-on-primary-container flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[48px] mb-md" data-icon="insights">insights</span>
+<h4 class="font-headline-md text-headline-md font-bold mb-xs">Optimization Tips</h4>
+<p class="font-body-md mb-md max-w-sm">Lead response times are averaging 4 hours. Aim for under 2 hours to increase conversion by 15%.</p>
+<button class="px-lg py-md bg-on-primary-container text-primary font-label-lg text-label-lg rounded-full hover:opacity-90 active:scale-95 transition-all">Review Analytics</button>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="w-full py-md bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-xl flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Leadflow Cleaning Services. All rights reserved.</p>
+<div class="flex gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple animation for table rows on hover
+            const tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', () => {
+                    row.style.transform = 'translateX(4px)';
+                    row.style.transition = 'transform 0.2s ease-out';
+                });
+                row.addEventListener('mouseleave', () => {
+                    row.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Search input focus effect
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchIcon = document.querySelector('.material-symbols-outlined[data-icon="search"]');
+            searchInput.addEventListener('focus', () => {
+                searchIcon.style.transform = 'scale(1.1)';
+                searchIcon.style.transition = 'transform 0.2s ease';
+            });
+            searchInput.addEventListener('blur', () => {
+                searchIcon.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

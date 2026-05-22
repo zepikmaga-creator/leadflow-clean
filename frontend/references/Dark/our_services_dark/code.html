@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | LeadFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e6e0e9",
+                        "tertiary": "#e7c365",
+                        "on-secondary": "#342b4b",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-dim": "#141218",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#e0d2ff",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "secondary": "#cdc0e9",
+                        "on-surface": "#e6e0e9",
+                        "primary-fixed": "#e9ddff",
+                        "inverse-surface": "#e6e0e9",
+                        "inverse-on-surface": "#322f35",
+                        "surface-bright": "#3b383e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container": "#211f24",
+                        "surface-container-highest": "#36343a",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cbc4d2",
+                        "inverse-primary": "#6750a4",
+                        "on-secondary-fixed": "#1f1635",
+                        "on-tertiary-container": "#503d00",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1d1b20",
+                        "surface": "#141218",
+                        "tertiary-fixed": "#ffdf93",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "outline-variant": "#494551",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#bfb2da",
+                        "on-tertiary": "#3e2e00",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "background": "#141218",
+                        "primary": "#cfbcff",
+                        "outline": "#948e9c",
+                        "surface-tint": "#cfbcff",
+                        "secondary-container": "#4d4465",
+                        "surface-variant": "#36343a",
+                        "on-primary-fixed": "#22005d",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-primary": "#381e72",
+                        "surface-container-lowest": "#0f0d13",
+                        "primary-container": "#6750a4",
+                        "primary-fixed-dim": "#cfbcff",
+                        "surface-container-high": "#2b292f",
+                        "tertiary-container": "#c9a74d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container_padding_desktop": "32px",
+                        "max_width": "1440px",
+                        "base_unit": "8px",
+                        "container_padding_mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "label-sm": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-surface-dim border-b border-outline-variant fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-max_width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">LeadFlow</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors">Login</button>
+<button class="bg-primary text-on-primary-fixed px-6 py-2 rounded-lg font-bold font-label-md text-label-md hover:opacity-90 transition-opacity">Get Started</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="max-w-max_width mx-auto px-gutter mb-16 text-center">
+<h1 class="font-display-lg text-display-lg mb-4 text-on-background">Precision Cleaning <span class="text-primary">Optimized</span></h1>
+<p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant">Elevating hygiene standards through data-driven operational excellence. Discover our range of specialized facility solutions.</p>
+</section>
+<!-- Bento Grid Services -->
+<section class="max-w-max_width mx-auto px-gutter mb-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Service Card -->
+<div class="md:col-span-8 glass-card rounded-xl p-8 relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm font-label-sm mb-4 inline-block">Premium Solution</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Enterprise Commercial Cleaning</h3>
+<p class="text-on-surface-variant max-w-lg mb-6">Our flagship service utilizes IoT sensors and predictive scheduling to maintain high-traffic corporate environments at 99.9% sanitation standards.</p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary scale-90">check_circle</span>
+<span>24/7 Monitoring</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary scale-90">check_circle</span>
+<span>Eco-Industrial Products</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary scale-90">check_circle</span>
+<span>Full Compliance Reporting</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary scale-90">check_circle</span>
+<span>Rapid Response Team</span>
+</li>
+</ul>
+</div>
+<button class="w-fit flex items-center gap-2 border border-outline-variant px-6 py-3 rounded-lg hover:bg-surface-container-highest transition-all group-hover:border-primary">
+<span>View technical specs</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-20 pointer-events-none">
+<img class="h-full w-full object-cover grayscale" data-alt="A high-end modern corporate office corridor with sleek glass partitions and polished dark floors. The lighting is architectural and cool-toned, creating a professional and sterile environment. The shot is wide-angle, emphasizing symmetry and the premium, dark blue and charcoal aesthetic of the LeadFlow brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt1eq-ERUCvr7kTM_Rzar3Zm9fVquOuHCUjU5-USWZBOcR72xMov5Lk472O0UUUdPeSPhL2rKNduP92MleXoNhrV7Hi-ahmZkh_F-AcIJiv-DDhj_oXU6Wgdrng87bUE8qIy_Atunz-IgfcYHcM9S95mv4qol9ycQE8MG8xAsx-Fv78Pulwn0Nh8ySMeWiaC3eKPVF_tgoNpgMROw32akAq2f9buQKwPzDbAZlfgAWDqRlgf6mB2yvYgeHQpu8F7nXj17tAmq5yxY5"/>
+</div>
+</div>
+<!-- Secondary Service 1 -->
+<div class="md:col-span-4 glass-card rounded-xl p-8 flex flex-col justify-between hover:border-tertiary transition-colors group">
+<div>
+<div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Healthcare Sanitation</h3>
+<p class="text-on-surface-variant text-label-md">Critical disinfection protocols for medical facilities, clinics, and laboratories requiring Grade-A sterile conditions.</p>
+</div>
+<a class="mt-8 text-tertiary font-bold flex items-center gap-2" href="#">
+                        Case Studies <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- Secondary Service 2 -->
+<div class="md:col-span-4 glass-card rounded-xl p-8 flex flex-col justify-between hover:border-secondary transition-colors group">
+<div>
+<div class="bg-secondary/10 text-secondary w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">factory</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Industrial Facilities</h3>
+<p class="text-on-surface-variant text-label-md">Heavy-duty specialized cleaning for manufacturing plants, warehouses, and logistical hubs.</p>
+</div>
+<a class="mt-8 text-secondary font-bold flex items-center gap-2" href="#">
+                        Details <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- Featured Tech Card -->
+<div class="md:col-span-8 glass-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center bg-gradient-to-br from-surface-container to-surface-dim">
+<div class="w-full md:w-1/2">
+<img class="rounded-lg w-full aspect-video object-cover" data-alt="A close-up shot of a sophisticated tablet screen displaying a modern dashboard with complex data visualizations, charts, and facility maps. The device is being held by a technician in a dark blue professional uniform. The setting is a dimly lit, high-tech control room with soft blue neon accents, reflecting the high-trust and technical proficiency of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWBFrx5Ed6OXZhYXysfSSjH1oIL-We83hH9BS9R8Xs_TXSd2PxfscWfTErHHjykhgTrrvsUu9YeV9vAX8NrO7PoTNvzKUoOSj0h9fPOfR1Dlmo313FKwa9YsiuDp7Bi0ZOWjuCzhnenj6LuoLq2zqOOCGcPuC1pYBPJxlf9_ELpco5X9ZTHc5LOJ_DaIcEVgc57pnmHuYdOSMY8P4cCIYLOonep-NGBIqltEQCYHLhq_-gwWpmw85b9MhFmGzJuCJ8_V_CriXxsw7q"/>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="font-headline-md text-headline-md mb-4 text-primary">The LeadFlow Dashboard</h3>
+<p class="text-on-surface-variant mb-6 font-body-md text-body-md">Real-time transparency for every square foot. Track cleaner locations, supply levels, and sanitation scores from any device.</p>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_#cfbcff]"></div>
+<span class="text-label-sm font-label-sm">Live GPS Tracking</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-secondary shadow-[0_0_8px_#cdc0e9]"></div>
+<span class="text-label-sm font-label-sm">Automated Supply Reorder</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Checklist and Form Section -->
+<section class="max-w-max_width mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Checklist Container -->
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg">The Quality Assurance Protocol</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Every service engagement follows a rigorous 50-point inspection system integrated into our management app.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-md">verified</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Pre-Service Assessment</h4>
+<p class="text-label-md text-on-surface-variant">Baseline bacterial testing and high-traffic zone identification.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary/10 rounded-md">precision_manufacturing</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Execution Monitoring</h4>
+<p class="text-label-md text-on-surface-variant">Algorithmic routing to ensure no surface is overlooked.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary p-2 bg-tertiary/10 rounded-md">analytics</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Post-Cleaning Analytics</h4>
+<p class="text-label-md text-on-surface-variant">Automated reporting sent directly to facility managers.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quote Request Form -->
+<div class="glass-card rounded-xl p-8 border-2 border-primary/20">
+<h3 class="font-headline-md text-headline-md mb-2">Request a Precision Quote</h3>
+<p class="text-on-surface-variant text-label-md mb-8">Get a customized operational plan within 12 hours.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Full Name</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Work Email</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Facility Type</label>
+<select class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-all">
+<option>Corporate Office</option>
+<option>Medical Center</option>
+<option>Industrial/Manufacturing</option>
+<option>Retail Complex</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Service Frequency</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-sm hover:bg-primary/10 hover:border-primary transition-all" type="button">Daily</button>
+<button class="px-4 py-2 rounded-full border border-primary bg-primary/10 text-primary text-label-sm font-bold" type="button">Weekly</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-sm hover:bg-primary/10 hover:border-primary transition-all" type="button">Bi-Weekly</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-label-sm hover:bg-primary/10 hover:border-primary transition-all" type="button">Monthly</button>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary-fixed py-4 rounded-lg font-bold font-headline-md text-headline-md shadow-[0_10px_20px_-10px_rgba(207,188,255,0.4)] hover:shadow-primary/50 transition-all active:scale-[0.98]">
+                        Generate My Custom Proposal
+                    </button>
+<p class="text-center text-label-sm text-on-surface-variant/60">No commitment required. Professional facility audit included.</p>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-8 w-full max-w-max_width mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-4 md:mb-0">LeadFlow</div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="text-on-surface-variant hover:text-primary underline font-label-sm text-label-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline font-label-sm text-label-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline font-label-sm text-label-sm transition-colors" href="#">Cookie Policy</a>
+</div>
+<p class="text-on-surface-variant font-label-sm text-label-sm text-center md:text-right">© 2024 LeadFlow Cleaning Services. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for checklist hover
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('scale-[1.01]');
+                card.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Form interaction
+        const frequencyBtns = document.querySelectorAll('button[type="button"]');
+        frequencyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                frequencyBtns.forEach(b => {
+                    b.classList.remove('border-primary', 'bg-primary/10', 'text-primary', 'font-bold');
+                    b.classList.add('border-outline-variant');
+                });
+                btn.classList.remove('border-outline-variant');
+                btn.classList.add('border-primary', 'bg-primary/10', 'text-primary', 'font-bold');
+            });
+        });
+    </script>
+</body></html>

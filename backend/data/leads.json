@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1779450836666-12ad4aa7c38658",
+    "name": "Paula",
+    "phone": "+23487569",
+    "service": "Commercial",
+    "preferredDate": "2026-05-10",
+    "comment": "Cna I bock an order?!?!?!",
+    "status": "contacted",
+    "createdAt": "2026-05-22T11:53:56.666Z",
+    "updatedAt": "2026-05-22T11:54:09.789Z"
+  },
+  {
+    "id": "1779450450503-3b217ccf6a19d8",
+    "name": "John Doe",
+    "phone": "+87878",
+    "service": "Commercial",
+    "preferredDate": "2067-07-06",
+    "comment": "Here I am",
+    "status": "new",
+    "createdAt": "2026-05-22T11:47:30.503Z",
+    "updatedAt": "2026-05-22T11:47:59.450Z"
+  },
+  {
+    "id": "1779444811804-29f86cd268f88",
+    "name": "NightCav",
+    "phone": "+111111",
+    "service": "Home cleaning",
+    "preferredDate": "2026-05-31",
+    "comment": "Let Codex cook!",
+    "status": "new",
+    "createdAt": "2026-05-22T10:13:31.804Z",
+    "updatedAt": "2026-05-22T11:48:01.446Z"
+  }
+]
