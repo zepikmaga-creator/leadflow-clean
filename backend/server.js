@@ -22,17 +22,33 @@ if (process.env.FRONTEND_URL) {
   allowedOrigins.push(process.env.FRONTEND_URL)
 }
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true)
-      }
+function isAllowedOrigin(origin) {
+  if (!origin) {
+    return true
+  }
 
-      callback(new Error('Not allowed by CORS'))
+  try {
+    const { hostname } = new URL(origin)
+    return allowedOrigins.includes(origin) || hostname.endsWith('.vercel.app')
+  } catch {
+    return false
+  }
+}
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (isAllowedOrigin(origin)) {
+      return callback(null, true)
     }
-  })
-)
+
+    callback(new Error('Not allowed by CORS'))
+  },
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 app.use(express.json())
 
 async function ensureStorage() {
